@@ -1,0 +1,6 @@
+pydrive2
+tqdm
+pinecone
+python-dotenv
+google-genai
+groq

@@ -1,0 +1,11 @@
+# Ignore Raw Data
+data/raw/*
+
+# Ignore Credentials
+credentials.json
+
+# Ignore Token
+token.json
+
+# Ignore Environment Variables
+.env
