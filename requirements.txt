@@ -1,6 +1,15 @@
+# ── Existing services ──────────────
 pydrive2
 tqdm
 pinecone
 python-dotenv
 google-genai
 groq
+
+# ── Pipeline additions ─────────────
+docling          # PDF/DOCX → Markdown (Stage 1)
+wordsegment      # CamelCase splitting in chunker (Stage 2)
+scikit-learn     # TF-IDF + cosine similarity for dedup (Stage 3)
+numpy            # Embedding cache (.npy files, Stage 4)
+sentence-transformers # Local embeddings (BAAI/bge-m3)
+torch                 # Backend for sentence-transformers
