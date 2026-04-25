@@ -7,8 +7,17 @@ from tqdm import tqdm
 # Setup paths relative to the script location
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CREDENTIALS_PATH = os.path.join(BASE_DIR, "credentials.json")
-DRIVE_FILES_JSON_PATH = os.path.join(BASE_DIR, "data", "raw", "drive_files.json")
 RAW_DATA_DIR = os.path.join(BASE_DIR, "data", "raw")
+
+# Drive manifest paths per country
+_DRIVE_MANIFESTS = {
+    "egypt":  os.path.join(BASE_DIR, "data", "raw", "drive_files.json"),
+    "saudi":  os.path.join(BASE_DIR, "data", "raw", "saudi", "saudi_drive_files.json"),
+}
+
+def _get_manifest_path(country: str) -> str:
+    """Return the drive manifest JSON path for the given country."""
+    return _DRIVE_MANIFESTS.get(country, _DRIVE_MANIFESTS["egypt"])
 
 
 def authenticate():
@@ -71,38 +80,63 @@ def download_folder(drive, folder_id, save_path):
                 print(f"Error downloading {file_name}: {e}")
 
 
-def main():
-    print("Authenticating with Google Drive...")
-    drive = authenticate()
+def download_cluster_data(cluster_name: str, country: str = "egypt") -> bool:
+    """
+    Download all files for *cluster_name* from Google Drive.
 
-    print(f"Reading target files from {DRIVE_FILES_JSON_PATH}")
-    with open(DRIVE_FILES_JSON_PATH, "r", encoding="utf-8") as f:
+    Args:
+        cluster_name: Folder/cluster name as it appears in the manifest JSON.
+        country:      'egypt' or 'saudi'. Controls which manifest file is used.
+
+    Returns:
+        True on success, False if the cluster was not found or URL is empty.
+    """
+    import logging
+    log = logging.getLogger(__name__)
+
+    manifest_path = _get_manifest_path(country)
+
+    if not os.path.exists(manifest_path):
+        log.warning(f"Drive manifest missing for country='{country}': {manifest_path}")
+        return False
+
+    with open(manifest_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    libraries = data.get("libraries", [])
+    target_lib = None
+    for lib in data.get("libraries", []):
+        if lib.get("name") == cluster_name:
+            target_lib = lib
+            break
 
-    for lib in libraries:
-        lib_name = lib.get("name")
-        lib_url = lib.get("url")
+    if not target_lib:
+        log.warning(f"Cluster '{cluster_name}' not found in {manifest_path}")
+        return False
 
-        if not lib_name or not lib_url:
-            print(f"Skipping invalid library entry: {lib}")
-            continue
+    cluster_url = target_lib.get("url", "").strip()
+    if not cluster_url:
+        log.warning(
+            f"  [DOWNLOAD] No Drive URL for Saudi cluster '{cluster_name}'. "
+            f"Edit data/raw/saudi/saudi_drive_files.json to add the folder link."
+        )
+        return False
 
-        folder_id = extract_folder_id(lib_url)
-        save_path = os.path.join(RAW_DATA_DIR, lib_name)
+    log.info(f"Authenticating PyDrive2 to download '{cluster_name}' ({country})...")
+    drive = authenticate()
 
-        # Create the specific folder for the library data
-        os.makedirs(save_path, exist_ok=True)
-        
-        # Save specific metadata JSON inside the folder
-        metadata_path = os.path.join(save_path, "metadata.json")
-        with open(metadata_path, "w", encoding="utf-8") as meta_f:
-            json.dump(lib, meta_f, ensure_ascii=False, indent=4)
+    # Determine save path: clusters always go into data/raw/<country>/<name>/
+    save_path = os.path.join(RAW_DATA_DIR, country, cluster_name)
 
-        print(f"\n Processing Library: {lib_name}")
-        download_folder(drive, folder_id, save_path)
+    os.makedirs(save_path, exist_ok=True)
 
+    metadata_path = os.path.join(save_path, "metadata.json")
+    with open(metadata_path, "w", encoding="utf-8") as meta_f:
+        json.dump(target_lib, meta_f, ensure_ascii=False, indent=4)
+
+    log.info(f"Downloading files for cluster: {cluster_name}")
+    folder_id = extract_folder_id(cluster_url)
+    download_folder(drive, folder_id, save_path)
+    return True
 
 if __name__ == "__main__":
-    main()
+    print("This script is now managed natively by run_pipeline.py (Stage 0).")

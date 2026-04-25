@@ -1,0 +1,1166 @@
+{
+  "الشيكولاتة": {
+    "dropped_count": 72,
+    "generated_at": "2026-04-22T18:02:45.275320+00:00",
+    "entries": [
+      {
+        "dropped_chunk_id": "08f2a8050c618c16451f498467806f77",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 0,
+        "kept_chunk_id": "d22675187fa8fc7e5e1c1436e934eefb",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9501
+      },
+      {
+        "dropped_chunk_id": "943cfd7049a0d685b69b9ebac58e46f7",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 1,
+        "kept_chunk_id": "7af4ce182467e9e78765ed488b103531",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9761
+      },
+      {
+        "dropped_chunk_id": "bac4d8300d56c4200de06d5f8d8ee98f",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 1,
+        "kept_chunk_id": "7af4ce182467e9e78765ed488b103531",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9761
+      },
+      {
+        "dropped_chunk_id": "dd55a4e179eef4d21f93c47b971e0c02",
+        "dropped_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "08ae97aec97f895a0d499d67ca67cf8c",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9047
+      },
+      {
+        "dropped_chunk_id": "3893bb17c4da40e042798c87e58a5fd4",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "4a3f1c3bd8424f59e7f898fc14a8e570",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "dbca29cbbf7a2c8110f9ae9ea311be3f",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 9,
+        "kept_chunk_id": "4a3f1c3bd8424f59e7f898fc14a8e570",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.904
+      },
+      {
+        "dropped_chunk_id": "025259827ec9b073b8294f64cb82cef9",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "4a3f1c3bd8424f59e7f898fc14a8e570",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "b1061bc940a5b793bca5f46d9752eb41",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 9,
+        "kept_chunk_id": "4a3f1c3bd8424f59e7f898fc14a8e570",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.904
+      },
+      {
+        "dropped_chunk_id": "f6c6ba84a80dd259fdc54ec427dc6b76",
+        "dropped_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "dropped_index": 14,
+        "kept_chunk_id": "877cbec6b94fa82d8d0535ac64fe8199",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.921
+      },
+      {
+        "dropped_chunk_id": "edfb7225a649641add8d3a219515c841",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 17,
+        "kept_chunk_id": "f484468120666f97ff591db1693ffdc7",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9356
+      },
+      {
+        "dropped_chunk_id": "97dbc9b6452629da99eb934a2ef20ef5",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 17,
+        "kept_chunk_id": "f484468120666f97ff591db1693ffdc7",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9356
+      },
+      {
+        "dropped_chunk_id": "592f16cfc97cce5e7e9bb700cc4aadde",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 26,
+        "kept_chunk_id": "bcb0d3acb13796713e43d2ce5a3f6ee3",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9015
+      },
+      {
+        "dropped_chunk_id": "a5a4156e02a3bf9edd249bea6a4f179c",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 28,
+        "kept_chunk_id": "34ee41006bc0993d1b45c4f145c8ac70",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9947
+      },
+      {
+        "dropped_chunk_id": "f9f0f65f525c858d0a701549fe64f797",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 21,
+        "kept_chunk_id": "34ee41006bc0993d1b45c4f145c8ac70",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9827
+      },
+      {
+        "dropped_chunk_id": "0e2e04fe3cb25745f98485c29cae9c8d",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 21,
+        "kept_chunk_id": "34ee41006bc0993d1b45c4f145c8ac70",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9827
+      },
+      {
+        "dropped_chunk_id": "af02ba17f1fa3c710b455f48d44a99d8",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 29,
+        "kept_chunk_id": "4f0b5df6f8ded5d40e58872110668f80",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9867
+      },
+      {
+        "dropped_chunk_id": "33fc64bc08e4056f95198eaf6763d524",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 22,
+        "kept_chunk_id": "4f0b5df6f8ded5d40e58872110668f80",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9867
+      },
+      {
+        "dropped_chunk_id": "cf7bbc475a50c1a91816cc2762215e85",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 22,
+        "kept_chunk_id": "4f0b5df6f8ded5d40e58872110668f80",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9867
+      },
+      {
+        "dropped_chunk_id": "375656ab1969e8db09cca1d5d6548bf3",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 24,
+        "kept_chunk_id": "1bde3b30e1ad56611831443729123101",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9204
+      },
+      {
+        "dropped_chunk_id": "abbfd21fa25c3e8826468d34d0500571",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 24,
+        "kept_chunk_id": "1bde3b30e1ad56611831443729123101",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9204
+      },
+      {
+        "dropped_chunk_id": "3220c0fde23b4e6ada389be2a735320f",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 7,
+        "kept_chunk_id": "a9d741924407c05761fc90a9cd282e59",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9005
+      },
+      {
+        "dropped_chunk_id": "888830445ddcfc3fa98400fcac8cdfdd",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 6,
+        "kept_chunk_id": "475fb6e5196809cddfc0be395004c219",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9537
+      },
+      {
+        "dropped_chunk_id": "8b29ef3701c958fe18333f5137b52a81",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "475fb6e5196809cddfc0be395004c219",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9182
+      },
+      {
+        "dropped_chunk_id": "86585d5047e8f1599df9d5f8b58761c1",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 11,
+        "kept_chunk_id": "361a8b0631825e83c708c5078a6445bc",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.949
+      },
+      {
+        "dropped_chunk_id": "2ebf44d0fbc9bf8cb66f71dd9c57cc04",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 15,
+        "kept_chunk_id": "361a8b0631825e83c708c5078a6445bc",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9101
+      },
+      {
+        "dropped_chunk_id": "7cfa0851dea2c7db5ae485aa37e6b830",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 16,
+        "kept_chunk_id": "7951a0815b9ead77aa61e560e4745fe1",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "07d6bf71e93b9b51ffc09c5d2f0fa641",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 16,
+        "kept_chunk_id": "7951a0815b9ead77aa61e560e4745fe1",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "a9475781f6df90e4fe7b6f076b818fc0",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 23,
+        "kept_chunk_id": "85ba14e6165b203863f46daf1de5bdf5",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9604
+      },
+      {
+        "dropped_chunk_id": "aaae8d8c33a016fa8b7cd2fd92f11f1d",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 23,
+        "kept_chunk_id": "85ba14e6165b203863f46daf1de5bdf5",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9604
+      },
+      {
+        "dropped_chunk_id": "d691439ad14a8c6444d8ef3f26df0055",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 0,
+        "kept_chunk_id": "56ae63f9d0effe9b4297dd261b91999e",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "c1e9ebf1490622797337268ef03128f3",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 2,
+        "kept_chunk_id": "ca39f5c9e1c822c908baf0042384401a",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "64efd44e37822e3ef70811468bc258cb",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 3,
+        "kept_chunk_id": "ff48584717d8933108b106fc774b85f8",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "49faf61062f09dd78562253f50dddfff",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 4,
+        "kept_chunk_id": "bfae5bffa1377eb5c47eb0b5ec2fb8a8",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "95ba08dd98900a507bb2f0064397808a",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 5,
+        "kept_chunk_id": "fdd8b838fbaba77c22b54f2ec6526f9e",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "82adb5636a77090bdf268131fd8ae490",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 7,
+        "kept_chunk_id": "c1791daa50864200f2736761c1b8b95c",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.901
+      },
+      {
+        "dropped_chunk_id": "efce5cc09b3f63048545ddf4a2ff1af5",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 6,
+        "kept_chunk_id": "c1791daa50864200f2736761c1b8b95c",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "5e8e5a5b58260fc768f9412a2b734c25",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 7,
+        "kept_chunk_id": "c1791daa50864200f2736761c1b8b95c",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.901
+      },
+      {
+        "dropped_chunk_id": "214d6d965dc49579669ed567690e9d91",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 11,
+        "kept_chunk_id": "13955879106d3acdae08ca89e0be8cbc",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.9856
+      },
+      {
+        "dropped_chunk_id": "b86649ef7c76b8516a712f0c15eb4405",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 10,
+        "kept_chunk_id": "13955879106d3acdae08ca89e0be8cbc",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "6d1ae648b39325483fbab77c65dc071a",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 11,
+        "kept_chunk_id": "13955879106d3acdae08ca89e0be8cbc",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.9856
+      },
+      {
+        "dropped_chunk_id": "8a9bf0caa536801741c07b86fe135b37",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 12,
+        "kept_chunk_id": "749ade33611d499918d619e69f457018",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "beb13522da4938cababfaf7254066185",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 13,
+        "kept_chunk_id": "96250cb55d871c480dce6cb727728b9c",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "c328f3ab0580b6fc4d74cb8be8c10224",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 14,
+        "kept_chunk_id": "f2acf7114f3d691355233baf0cd580a0",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "46ba6e4acc8c0b730ac2ae3938d38440",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 15,
+        "kept_chunk_id": "b216d9ca3e93ccf10843fb6cfd5f5245",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "9fed7752eeeb8bbe54cf0b6ec1f1ae1e",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 18,
+        "kept_chunk_id": "80d7d04ec0ac39836f1a0c5d4995a6db",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "6288af1523bebb757226cec16875f7c3",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 19,
+        "kept_chunk_id": "0881283aef63f3f4c3d555b4f3da1071",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "a1d5b1f6765f63fcf5ad2b8f627dc420",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 20,
+        "kept_chunk_id": "63ea475ee187681a17e8daa2836c7dd7",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "61d7477d7713d6a593c69bb5f74cdf00",
+        "dropped_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "dropped_index": 45,
+        "kept_chunk_id": "254e3f0afa1a8a47132afd4156a0b322",
+        "kept_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "similarity": 0.9168
+      },
+      {
+        "dropped_chunk_id": "4ea37645a5347bbeabe5171221af9e3d",
+        "dropped_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "dropped_index": 38,
+        "kept_chunk_id": "8fe410f95663d80cdeac95d9dc88529a",
+        "kept_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "similarity": 0.9006
+      },
+      {
+        "dropped_chunk_id": "d7fee5b9c92ef91ad10d7003b820cd32",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1464,
+        "kept_chunk_id": "883a7d6475a28a2fbbd9ddc95290ac57",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9704
+      },
+      {
+        "dropped_chunk_id": "31d9e602a45291e09c474548d97a097d",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1465,
+        "kept_chunk_id": "653ce46358c788cb29c8b91e75b9aeb0",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9186
+      },
+      {
+        "dropped_chunk_id": "f583618e6ea43a28c11ad893d7cfe6ab",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1466,
+        "kept_chunk_id": "fbd9b637c28352b07d223c1f7ef6f4f0",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9385
+      },
+      {
+        "dropped_chunk_id": "1e085653fca5e07402c56e2f7580c99a",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1467,
+        "kept_chunk_id": "03b276f5ff880668c245c567bc1afe3a",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9198
+      },
+      {
+        "dropped_chunk_id": "44d3b1112201f1376efb235b8e7adce0",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1469,
+        "kept_chunk_id": "42d07e805f3225301a72fcee0d8bf58a",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9635
+      },
+      {
+        "dropped_chunk_id": "7e858469af13c0b8f4d15272dcd2083b",
+        "dropped_source": "CHOCOLATE.pdf",
+        "dropped_index": 13,
+        "kept_chunk_id": "4233bdb28be10b4fe9e64d2cd1851863",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9472
+      },
+      {
+        "dropped_chunk_id": "4c35a261c5cdd4cccb01f7f0ba89997d",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1471,
+        "kept_chunk_id": "4233bdb28be10b4fe9e64d2cd1851863",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9707
+      },
+      {
+        "dropped_chunk_id": "5ba8b88f2ecded64190a3d9f2b793009",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1472,
+        "kept_chunk_id": "4233bdb28be10b4fe9e64d2cd1851863",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9268
+      },
+      {
+        "dropped_chunk_id": "34763a6c3f2ed5950876b8dbf1cd10fb",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 2,
+        "kept_chunk_id": "734a23b2fd68f1348bb2453f7eca1466",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9855
+      },
+      {
+        "dropped_chunk_id": "1bc0daa304d2280768399f5dc9dbbfc7",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 477,
+        "kept_chunk_id": "c8341fe1603f757c0835e2807f556e52",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.941
+      },
+      {
+        "dropped_chunk_id": "cbd98c82448284f37bfa0b87f1464dc1",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 544,
+        "kept_chunk_id": "c8341fe1603f757c0835e2807f556e52",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9393
+      },
+      {
+        "dropped_chunk_id": "bf63be9bed25d630e737386ea39484d1",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 482,
+        "kept_chunk_id": "4141287a856508933e4623d9b6f7bd4b",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.955
+      },
+      {
+        "dropped_chunk_id": "86270e9b2b2e10317b645fb9106e7612",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 543,
+        "kept_chunk_id": "11899b18738f3e117c8ff0fa2e40bef3",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9735
+      },
+      {
+        "dropped_chunk_id": "577b7798dea652471b2fdd4d46e29053",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 552,
+        "kept_chunk_id": "ed2b48d915d16fa2bdafcabe189ec905",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9513
+      },
+      {
+        "dropped_chunk_id": "439c690c4efb1566d6883d9ef65bef94",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 553,
+        "kept_chunk_id": "d581d1ac7f5b45be593305e0cd36afe8",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9601
+      },
+      {
+        "dropped_chunk_id": "3a279da7f9bae653db5189c3ab14537f",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 630,
+        "kept_chunk_id": "75b4053e412fe43ac729177948ac4a60",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9715
+      },
+      {
+        "dropped_chunk_id": "fe9ab88cd692e4ee8f5ae6835418d8af",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 633,
+        "kept_chunk_id": "634b63703201790a4b1ac51204e886fa",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.95
+      },
+      {
+        "dropped_chunk_id": "3238ffb00a15d187ee0ff8653041c9e0",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 635,
+        "kept_chunk_id": "8ada0ff3c8c68b6009e330bdc3461d5d",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9343
+      },
+      {
+        "dropped_chunk_id": "55e1c639140d5402b375298d0ae74cb4",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 724,
+        "kept_chunk_id": "18b8cda2a94271963f2f5bae4208a17d",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9423
+      },
+      {
+        "dropped_chunk_id": "b31e4722ec5204dbecb73ed85c7b0130",
+        "dropped_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "dropped_index": 13,
+        "kept_chunk_id": "f6a93bec1382279e73f10d32d2d8044c",
+        "kept_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "similarity": 0.903
+      },
+      {
+        "dropped_chunk_id": "85af51d41bf15d052dc33355d5a0445b",
+        "dropped_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "dropped_index": 79,
+        "kept_chunk_id": "06e391f0d833f53225bb85f568150b50",
+        "kept_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "similarity": 0.9013
+      },
+      {
+        "dropped_chunk_id": "4261e8ff50363030f69f2b8e24a80aeb",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1205,
+        "kept_chunk_id": "f17a254e931d6ce06360841e8fa3a5c9",
+        "kept_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "similarity": 0.9278
+      },
+      {
+        "dropped_chunk_id": "50c99a6288f4c878ca789b65a1be0cff",
+        "dropped_source": "MakingChocolate101.pdf",
+        "dropped_index": 63,
+        "kept_chunk_id": "908af29daf92492bf93eadcbb15128db",
+        "kept_source": "MakingChocolate101.pdf",
+        "similarity": 0.93
+      }
+    ]
+  },
+  "chocolate": {
+    "dropped_count": 72,
+    "generated_at": "2026-04-24T11:43:39.622456+00:00",
+    "entries": [
+      {
+        "dropped_chunk_id": "f3e5cba14af048ba2621ee14febd7ea8",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 0,
+        "kept_chunk_id": "3d33afdeb27c1317b533f91de9a1c3f3",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9501
+      },
+      {
+        "dropped_chunk_id": "44f8e9b8f21cced4624463c266b33c96",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 1,
+        "kept_chunk_id": "794d5ce2458299283320228d191a1b6e",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9761
+      },
+      {
+        "dropped_chunk_id": "fcd13883ee6c868022f2ca9bf671ae67",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 1,
+        "kept_chunk_id": "794d5ce2458299283320228d191a1b6e",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9761
+      },
+      {
+        "dropped_chunk_id": "80e2d33bcc0043b93ee4ce084c4d532f",
+        "dropped_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "28eb66c242ff22fec985bf77009ef8ef",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9047
+      },
+      {
+        "dropped_chunk_id": "a5f6a8f57e5312384b2ec018d8001702",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "52139f0e542166e7f1e218bf9b485493",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "35535f4556ef02cbfb360274a71f2302",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 9,
+        "kept_chunk_id": "52139f0e542166e7f1e218bf9b485493",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.904
+      },
+      {
+        "dropped_chunk_id": "4f64c6721a8575beaf9df68e1d6dffc6",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "52139f0e542166e7f1e218bf9b485493",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "a814368304ecd530aac419a8df19cabc",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 9,
+        "kept_chunk_id": "52139f0e542166e7f1e218bf9b485493",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.904
+      },
+      {
+        "dropped_chunk_id": "226bdac4c1f465a3442fe7fcd04880e9",
+        "dropped_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "dropped_index": 14,
+        "kept_chunk_id": "f771af39d7aa99f917a5a8fdd60f4ec7",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.921
+      },
+      {
+        "dropped_chunk_id": "69aaef5233b0b5f6c92b9cb941f422f9",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 17,
+        "kept_chunk_id": "5ec1c148feef49a876eac2340509f76d",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9356
+      },
+      {
+        "dropped_chunk_id": "49e02d09bf280b9cf83bafe1e3e2809b",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 17,
+        "kept_chunk_id": "5ec1c148feef49a876eac2340509f76d",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9356
+      },
+      {
+        "dropped_chunk_id": "10876163390a6a618d1cb4c4b9be072e",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 26,
+        "kept_chunk_id": "7752e26857017e2d6a52f24783a50a3a",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9015
+      },
+      {
+        "dropped_chunk_id": "c40ee1bf350f3ea87f31b7327c98730f",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 28,
+        "kept_chunk_id": "6ff23061d4709f4f67f3dc8ed3cea496",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9947
+      },
+      {
+        "dropped_chunk_id": "06cb4eb4060f65f7bdb214982c9d956b",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 21,
+        "kept_chunk_id": "6ff23061d4709f4f67f3dc8ed3cea496",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9827
+      },
+      {
+        "dropped_chunk_id": "f06e4c1a44a07dcfdab30912a4a160ba",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 21,
+        "kept_chunk_id": "6ff23061d4709f4f67f3dc8ed3cea496",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9827
+      },
+      {
+        "dropped_chunk_id": "3eec671421cb27e9fd4c5aed8ac7c4a0",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 29,
+        "kept_chunk_id": "e3bb6762af3f9304b6f980a4962d11ec",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9867
+      },
+      {
+        "dropped_chunk_id": "979c34581aea03ef26e611668a221199",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 22,
+        "kept_chunk_id": "e3bb6762af3f9304b6f980a4962d11ec",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9867
+      },
+      {
+        "dropped_chunk_id": "e7ddfcab24ad80b40e33ed010968cb7e",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 22,
+        "kept_chunk_id": "e3bb6762af3f9304b6f980a4962d11ec",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9867
+      },
+      {
+        "dropped_chunk_id": "1629bbd15d89448a95cbbef3040d6949",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 24,
+        "kept_chunk_id": "e809be0566b60d0086bcd4cb009ed5a1",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9204
+      },
+      {
+        "dropped_chunk_id": "396ff7bccc8c4b4cbeee443b7e8ffc27",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 24,
+        "kept_chunk_id": "e809be0566b60d0086bcd4cb009ed5a1",
+        "kept_source": "465-P3-2005 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة .pdf",
+        "similarity": 0.9204
+      },
+      {
+        "dropped_chunk_id": "3e5c3bdd4cad66f5fd856bc8ba2f814a",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 7,
+        "kept_chunk_id": "5c04c0cde102f874fc908d48dc43f5ed",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9005
+      },
+      {
+        "dropped_chunk_id": "6b0367de2222654c3ff2bf7a299d920e",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 6,
+        "kept_chunk_id": "e5e4988be1a1c0d5933d46e6cc021e64",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9537
+      },
+      {
+        "dropped_chunk_id": "2c73f35ce729ec2b1e207b7da3374f18",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 8,
+        "kept_chunk_id": "e5e4988be1a1c0d5933d46e6cc021e64",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9182
+      },
+      {
+        "dropped_chunk_id": "0bada168a2048c6b3686c032a5650130",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 11,
+        "kept_chunk_id": "007abe9d4bb708cb3aeee801180a26ee",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.949
+      },
+      {
+        "dropped_chunk_id": "7bbae723e2ed3c5de428b8431d183177",
+        "dropped_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "dropped_index": 15,
+        "kept_chunk_id": "007abe9d4bb708cb3aeee801180a26ee",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9101
+      },
+      {
+        "dropped_chunk_id": "37d26956648da37215bc7ebf2b028dc8",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 16,
+        "kept_chunk_id": "1e616bc2363e40891c382df958f1d713",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "e65b8e42055d4bdd1a77e654b9998e97",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 16,
+        "kept_chunk_id": "1e616bc2363e40891c382df958f1d713",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9041
+      },
+      {
+        "dropped_chunk_id": "8e59bc19d4fe2c42eb58507b47a15cc4",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 23,
+        "kept_chunk_id": "b61f7f5fff5f2f5a8fc7a9f03d6f53ff",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9604
+      },
+      {
+        "dropped_chunk_id": "cf5ba69b3d1417e6862549ff968a29c1",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 23,
+        "kept_chunk_id": "b61f7f5fff5f2f5a8fc7a9f03d6f53ff",
+        "kept_source": "465-P4-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاتها - الشيكولاتة ببدائل زبدة الكاكاو  .pdf",
+        "similarity": 0.9604
+      },
+      {
+        "dropped_chunk_id": "f5eab3cc6838fc903bc73217ec4f62a7",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 0,
+        "kept_chunk_id": "dc5e8ae3f41a816bff06401306784de1",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "1beca36c79e647f10e07b86ee8d3efe0",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 2,
+        "kept_chunk_id": "ca2dff089dbc5561614b94664852cb2f",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "0d047161ab0d6c1e915270c524a67b25",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 3,
+        "kept_chunk_id": "d21336cd856aca0f911a584e527a5be6",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "c9ff0c50f5438041b5d89175a6f081c4",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 4,
+        "kept_chunk_id": "c4a86c72114e1d8b82fc6f023c09793f",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "281f8e64691726c5e4dd18fb8058adbf",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 5,
+        "kept_chunk_id": "6f580fba8dbacb347861ca3be4259a23",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "21ef3502244153089549474cd7f0041b",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 7,
+        "kept_chunk_id": "a12b524002118b854d9b83bddb5275f4",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.901
+      },
+      {
+        "dropped_chunk_id": "117dfe3fa07f34e977fad561028ccebd",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 6,
+        "kept_chunk_id": "a12b524002118b854d9b83bddb5275f4",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "ecc30b2a1cdb1e747a4559aefe69a625",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 7,
+        "kept_chunk_id": "a12b524002118b854d9b83bddb5275f4",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.901
+      },
+      {
+        "dropped_chunk_id": "ef515f1178aa9d3ee3602f5684655119",
+        "dropped_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "dropped_index": 11,
+        "kept_chunk_id": "8096c98dfb3ba3fafa37032c27e533f3",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.9856
+      },
+      {
+        "dropped_chunk_id": "d7555a6c43fbc2a5dc8afadd641cc489",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 10,
+        "kept_chunk_id": "8096c98dfb3ba3fafa37032c27e533f3",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "681a53c9b60dc611d49033ae465f1493",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 11,
+        "kept_chunk_id": "8096c98dfb3ba3fafa37032c27e533f3",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 0.9856
+      },
+      {
+        "dropped_chunk_id": "124536cd9175a2e602d2532fcfd62b03",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 12,
+        "kept_chunk_id": "ebe436c9f39646270ce1031940ae61a3",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "066fa664883c7def98aacc64c3d57ff6",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 13,
+        "kept_chunk_id": "4b7d9a6e7cc3b563a9b7ef2c676d22ee",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "4702555b8d8f288581ea8b9c8a00abed",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 14,
+        "kept_chunk_id": "4cec3dbd2bcb1313b6c34539c719d3b0",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "49c91b86262f411d4836fd956b4adb8a",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 15,
+        "kept_chunk_id": "96ebd9f634a17505f5e393ad8b66d200",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "138c18ad79ca66567f87db443cd1d93d",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 18,
+        "kept_chunk_id": "4dac958217d023d28745654b8ebca43c",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "ddd59b03e1ef7fe1a8de0e91ae0aeeb0",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 19,
+        "kept_chunk_id": "60ed8b0df45ef01f78df5f69b4ac9793",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "b8b93c45a980804450aa23a004f1c92b",
+        "dropped_source": "مواصفات الشيكولاتة البيضاء.pdf",
+        "dropped_index": 20,
+        "kept_chunk_id": "55a9ca391e1f2722e3eb3d5f517e12ed",
+        "kept_source": "465-P7-2007 المواصفة القياسية المصرية - الكاكاو ومنتجاته - الشيكولاتة البيضاء .pdf",
+        "similarity": 1.0
+      },
+      {
+        "dropped_chunk_id": "6f730bcec667e5ca6f33eeb9ad2a2090",
+        "dropped_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "dropped_index": 45,
+        "kept_chunk_id": "a463c649de457df69ca0aca5e6cb6f0d",
+        "kept_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "similarity": 0.9168
+      },
+      {
+        "dropped_chunk_id": "a0de108e833a3021b37857cd5ec22fff",
+        "dropped_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "dropped_index": 38,
+        "kept_chunk_id": "446298044a9fa4d1bf48d0fbe75d50f8",
+        "kept_source": "CADBURY-CHOCOLATE-RECIPES.pdf",
+        "similarity": 0.9006
+      },
+      {
+        "dropped_chunk_id": "51259ab43b56171b54f6a2758f485c1c",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1464,
+        "kept_chunk_id": "22395a9a50b6fb87951a3de384f1421d",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9704
+      },
+      {
+        "dropped_chunk_id": "5b786e2e35cbe10ba0f20df14592ab21",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1465,
+        "kept_chunk_id": "df0125c514fa8aa00d401f53b3fb7ea1",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9186
+      },
+      {
+        "dropped_chunk_id": "bba36d6ccd1993f74ced47ab4ba13db6",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1466,
+        "kept_chunk_id": "bbf92fe93509fdc7dc65343985a17021",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9385
+      },
+      {
+        "dropped_chunk_id": "918af46d9d736f976aa42f916857e402",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1467,
+        "kept_chunk_id": "b5b3dfec3304e7320db9b11ebc05698a",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9198
+      },
+      {
+        "dropped_chunk_id": "4c7820c7d4aa2bde987ca65615477397",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1469,
+        "kept_chunk_id": "92068c73090544a0ead8542ab37305f9",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9635
+      },
+      {
+        "dropped_chunk_id": "0b4441a729c98491c7fc097a1b80d600",
+        "dropped_source": "CHOCOLATE.pdf",
+        "dropped_index": 13,
+        "kept_chunk_id": "5306e0a074dc3cdbb413ef1d56abd79d",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9472
+      },
+      {
+        "dropped_chunk_id": "409fcc32899f4e479a2d8bad6d1496b8",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1471,
+        "kept_chunk_id": "5306e0a074dc3cdbb413ef1d56abd79d",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9707
+      },
+      {
+        "dropped_chunk_id": "532871d46b843e79497dc3e5786afa81",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1472,
+        "kept_chunk_id": "5306e0a074dc3cdbb413ef1d56abd79d",
+        "kept_source": "CHOCOLATE.pdf",
+        "similarity": 0.9268
+      },
+      {
+        "dropped_chunk_id": "670b7b26759d8a0f18636528dbb1b3b0",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 2,
+        "kept_chunk_id": "ce809b0fab25aba64ebb9ada19f256bb",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9855
+      },
+      {
+        "dropped_chunk_id": "83083cf833e017f65bdfb894d79c8bdb",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 477,
+        "kept_chunk_id": "396737a443fe814c448ea761a0ff15f7",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.941
+      },
+      {
+        "dropped_chunk_id": "0054da7a2f19e2224a988f5b2b7cb554",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 544,
+        "kept_chunk_id": "396737a443fe814c448ea761a0ff15f7",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9393
+      },
+      {
+        "dropped_chunk_id": "14f9a4f872540ae551789f9c2454d30b",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 482,
+        "kept_chunk_id": "55b4a0df5158d9d2204f6f9dd61afaa4",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.955
+      },
+      {
+        "dropped_chunk_id": "44dfc492ab6626f6d03021f7e87ff9a7",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 543,
+        "kept_chunk_id": "62152dc47be846a507f5c75c39f3b26b",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9735
+      },
+      {
+        "dropped_chunk_id": "c35278091f56a931dade74fafe8c5e2c",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 552,
+        "kept_chunk_id": "1eb387908b378601e5f9ad1fd4eebfba",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9513
+      },
+      {
+        "dropped_chunk_id": "8413a37d49386076937865eed8ffe537",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 553,
+        "kept_chunk_id": "db7615cdda522577b6d9c7ab060a6d00",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9601
+      },
+      {
+        "dropped_chunk_id": "b9e0e6a0bf20d93796b387872b1e2fbc",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 630,
+        "kept_chunk_id": "2fa64de8fdfe4a5b665cc6958630ec6c",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9715
+      },
+      {
+        "dropped_chunk_id": "918ff607991b0fc78a4ab2c6eb4fab88",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 633,
+        "kept_chunk_id": "1386f4804164919d18d6d35f9efe1c26",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.95
+      },
+      {
+        "dropped_chunk_id": "a3061743f0edbfc47dcaa16e30bebb8d",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 635,
+        "kept_chunk_id": "28b6a69de545ce165c9328bf6810e396",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9343
+      },
+      {
+        "dropped_chunk_id": "31b471ba6ca79327ded7761630b512c8",
+        "dropped_source": "Chocolate_Science_and_Technology.pdf",
+        "dropped_index": 724,
+        "kept_chunk_id": "12ee320652d25c384212e6a8071dafff",
+        "kept_source": "Chocolate_Science_and_Technology.pdf",
+        "similarity": 0.9423
+      },
+      {
+        "dropped_chunk_id": "23c5c376f9ccf63baffcd2dc9f71266a",
+        "dropped_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "dropped_index": 13,
+        "kept_chunk_id": "c7b6153d076900e4dca1c1ceea079e1a",
+        "kept_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "similarity": 0.903
+      },
+      {
+        "dropped_chunk_id": "2fb8e2150834e3f60972bb863ed86e54",
+        "dropped_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "dropped_index": 79,
+        "kept_chunk_id": "7fe80e51ea981e6761d74e30cdcfc288",
+        "kept_source": "Cocoa Chocolate and Sugar Confectionery in Qatar_AR.pdf",
+        "similarity": 0.9013
+      },
+      {
+        "dropped_chunk_id": "317e611d3023ae7a3a00f52c3d32951a",
+        "dropped_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "dropped_index": 1205,
+        "kept_chunk_id": "9f3210f6d9da07f573c429a7e439374a",
+        "kept_source": "Industrial Chocolate Manufacture and Use_1752407073.pdf",
+        "similarity": 0.9278
+      },
+      {
+        "dropped_chunk_id": "8a2c59c20a13b3774c9f2e7adada8138",
+        "dropped_source": "MakingChocolate101.pdf",
+        "dropped_index": 63,
+        "kept_chunk_id": "3174abd3bfffca469a25ff5af3ae68b2",
+        "kept_source": "MakingChocolate101.pdf",
+        "similarity": 0.93
+      }
+    ]
+  }
+}

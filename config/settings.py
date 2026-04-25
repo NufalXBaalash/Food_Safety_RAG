@@ -1,8 +1,11 @@
 import os
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Load all configurations from .env
 load_dotenv()
+
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 class Config:
     # ── Pinecone ────────────────────────────────────────────────────────────────
@@ -15,6 +18,10 @@ class Config:
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
     GROQ_API_KEY   = os.getenv("GROQ_API_KEY")
 
+    # ── Telegram ────────────────────────────────────────────────────────────────
+    TELEGRAM_API_ID   = os.getenv("TELEGRAM_API_ID")
+    TELEGRAM_API_HASH = os.getenv("TELEGRAM_API_HASH")
+
     # Hardware acceleration: "cpu", "cuda", or "auto"
     ACCELERATOR_DEVICE = os.getenv("ACCELERATOR_DEVICE", "cpu").lower()
 
@@ -23,6 +30,7 @@ class Config:
     EMBEDDING_DIMENSION = int(os.getenv("EMBEDDING_DIMENSION", "1024"))
 
     # ── Metadata ──────────────────────────────────────────────────────────────────
+    # Override at runtime with --country flag (see run_pipeline.py) or via .env
     COUNTRY             = os.getenv("COUNTRY", "egypt")
 
     # ── Pipeline ─────────────────────────────────────────────────────────────────
@@ -70,5 +78,46 @@ CLUSTER_NAME_MAP: dict[str, str] = {
     "الخضروات والفواكه":                            "vegetables-and-fruits",
 }
 
+# ── Saudi Arabia cluster name map (English folder → Pinecone display name) ──────
+SAUDI_CLUSTER_NAME_MAP: dict[str, str] = {
+    "haccp":                   "haccp",
+    "iso":                     "iso",
+    "sfda":                    "sfda",
+    "meat":                    "meat",
+    "dairy":                   "dairy",
+    "fish":                    "fish",
+    "packaging-systems":       "packaging-systems",
+    "vegetables-and-fruits":   "vegetables-and-fruits",
+    "allergens":               "allergens",
+    "food-additives":          "food-additives",
+    "microbiology":            "microbiology",
+    "food-quality":            "food-quality",
+    "hygiene-and-sanitation":  "hygiene-and-sanitation",
+    "food-analysis":           "food-analysis",
+    "nutrition":               "nutrition",
+    "oils-and-fats":           "oils-and-fats",
+    "manufacturing":           "manufacturing",
+    "food-spoilage":           "food-spoilage",
+    "general-food-safety":     "general-food-safety",
+}
+
 # Create a singleton configuration instance
 settings = Config()
+
+
+# ── Dynamic path helpers (country-aware) ─────────────────────────────────────
+def get_raw_dir() -> Path:
+    """Returns data/raw/<country>/ using the current settings.COUNTRY value."""
+    return _PROJECT_ROOT / "data" / "raw" / settings.COUNTRY
+
+
+def get_markdown_dir() -> Path:
+    """Returns data/markdown/<country>/ using the current settings.COUNTRY value."""
+    return _PROJECT_ROOT / "data" / "markdown" / settings.COUNTRY
+
+
+def get_cluster_name_map() -> dict[str, str]:
+    """Returns the correct cluster map for the active country."""
+    if settings.COUNTRY == "saudi":
+        return SAUDI_CLUSTER_NAME_MAP
+    return CLUSTER_NAME_MAP

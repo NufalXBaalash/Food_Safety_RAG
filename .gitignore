@@ -1,5 +1,8 @@
 # Ignore Raw Data
 data/raw/*
+data/markdown/*
+data/embeddings/*
+data/debug_report.json
 
 # Ignore Credentials
 credentials.json

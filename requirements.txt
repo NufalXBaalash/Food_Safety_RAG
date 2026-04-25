@@ -13,3 +13,4 @@ scikit-learn     # TF-IDF + cosine similarity for dedup (Stage 3)
 numpy            # Embedding cache (.npy files, Stage 4)
 sentence-transformers # Local embeddings (BAAI/bge-m3)
 torch                 # Backend for sentence-transformers
+telethon              # Telegram API Client
