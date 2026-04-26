@@ -1,45 +1,118 @@
-# Food Safety RAG Pipeline
+# 🛡️ Food Safety RAG Pipeline
 
-This project builds a robust Retrieval-Augmented Generation (RAG) system dedicated to food safety materials. It pulls raw domain knowledge directly from Google Drive, processes it, and embeds it into a vector database (Pinecone) to be referenced by Large Language Models (Gemini, Groq) to accurately answer queries.
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Powered by Gemini](https://img.shields.io/badge/AI-Gemini-orange.svg)](https://deepmind.google/technologies/gemini/)
+[![Powered by Groq](https://img.shields.io/badge/Inference-Groq-green.svg)](https://groq.com/)
 
-## Project Structure
+An enterprise-grade **Retrieval-Augmented Generation (RAG)** system specifically engineered for food safety compliance and domain knowledge. This pipeline transforms unstructured regulatory documents into a high-precision interactive knowledge base.
 
-* `/config`: Central configuration manager. Loads environment variables dynamically using `python-dotenv`.
-* `/data/raw`: Houses the master `drive_files.json` which maps categories to Google Drive Folder URLs. When the download script runs, nested files are securely synchronized here.
-* `/scripts`: Dedicated scripts like `download_drive.py` used to incrementally parse, authenticate, and batch-download raw PDFs to your local machine.
-* `/services`: Service singletons that manage database connects and ML integrations such as Gemini (for embeddings), Groq (for fast inference), and Pinecone (as the semantic VectorDB).
-* `/test`: Simple integration tests to visually verify that services route effectively and authentication tokens are working.
+---
 
-## Setup Requirements
+## ✨ Key Features
 
-### 1. Environment Configurations
+- **🚀 Multi-Stage Pipeline**: Modular architecture featuring Routing, Hybrid Retrieval, Reranking, and Generation.
+- **🧠 Intelligent Routing**: LLM-based query classification to target specific document categories (e.g., FDA, EFSA, USDA).
+- **🔍 Hybrid Search Engine**: Combines **Semantic Vector Search** (Pinecone + Gemini Embeddings) with **BM25 Keyword Search** for maximum recall.
+- **🎯 Precision Reranking**: Utilizes a **Cross-Encoder reranker** to ensure the most relevant context is prioritized for the LLM.
+- **⚡ High-Speed Inference**: Powered by **Groq** for near-instantaneous response generation.
+- **📁 Automated Data Sync**: Integrated Google Drive sync for seamless knowledge ingestion.
 
-All system credentials should be safely stored in the `.env` file at the root of your project directory. 
-Create `.env` using following properties and insert your actual keys:
+---
 
-```bash
-PINECONE_API_KEY=
-PINECONE_ENVIRONMENT=
-PINECONE_INDEX_NAME=
-GEMINI_API_KEY=
-GROQ_API_KEY=
+## 🏗️ Architecture Overview
+
+The pipeline follows a sophisticated 4-step process to ensure accuracy and relevance:
+
+1.  **Routing**: The query is analyzed by an LLM to identify relevant categories.
+2.  **Hybrid Retrieval**: Parallel execution of semantic and keyword search across targeted categories.
+3.  **Reranking**: A secondary scoring pass using a Cross-Encoder to filter out noise.
+4.  **Generation**: Final response synthesized using Gemini/Groq with retrieved context.
+
+```mermaid
+graph TD
+    A[User Query] --> B{LLM Router}
+    B -->|Category A| C[Hybrid Retriever]
+    B -->|Category B| C
+    C -->|Semantic Search| D[Pinecone]
+    C -->|Keyword Search| E[BM25]
+    D --> F[Merge & Deduplicate]
+    E --> F
+    F --> G[Cross-Encoder Reranker]
+    G --> H[LLM Generator]
+    H --> I[Final Answer]
 ```
 
-### 2. Google Drive Authentication
+---
 
-Before you can download knowledge from Drive, you must ensure that you have standard OAuth Client credentials capable of local authentication.
-1. Place your OAuth credentials inside `credentials.json` at the project root.
-2. Ensure your `credentials.json` states that your `redirect_uris` includes `http://localhost:8080/`.
+## 📂 Project Structure
 
-### 3. Downloading Raw Data
+```text
+├── config/             # Configuration & Environment Management
+├── core/               # Main RAG Logic (Router, Retriever, Reranker, Pipeline)
+├── data/               # Raw & Processed Data
+├── rerankers/          # Custom Reranking Implementations
+├── retrievers/         # Specialized Search Modules (BM25, etc.)
+├── scripts/            # Utility Scripts (Drive Sync, Ingestion)
+├── services/           # External API Integrations (Gemini, Groq, Pinecone)
+├── utils/              # Logging & Helper Utilities
+└── main.py             # System Entry Point
+```
 
-To pull all relevant documents from Google Drive to your local machine:
-1. Ensure your Python virtual environment is activated and your `requirements.txt` dependencies are installed.
-2. Run the executable script from the root directory:
-   
+---
+
+## 🛠️ Setup & Installation
+
+### 1. Clone & Install
+```bash
+git clone https://github.com/your-repo/Food_Safety_RAG.git
+cd Food_Safety_RAG
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### 2. Environment Variables
+Create a `.env` file in the root directory:
+```env
+# Vector Database
+PINECONE_API_KEY=your_pinecone_key
+PINECONE_ENVIRONMENT=your_env
+PINECONE_INDEX_NAME=food-safety
+
+# AI Services
+GEMINI_API_KEY=your_gemini_key
+GROQ_API_KEY=your_groq_key
+```
+
+### 3. Google Drive Sync
+1. Place `credentials.json` (OAuth 2.0) in the root.
+2. Run the sync script:
    ```bash
    python scripts/download_drive.py
    ```
 
-3. A local authentication window will open. Selecting offline access ensures a `token.json` file is cached at your root directory. The script uses this token to perpetually refresh during background downloads without timing out.
-4. The downloaded materials will be automatically routed into human-readable subdirectories directly inside `/data/raw`. The script utilizes recursive folder checking—if network connection drops, just rerun the command; it intelligently skips documents already saved.
+---
+
+## 🚀 Usage
+
+Execute the main pipeline to start querying your food safety knowledge base:
+
+```bash
+python main.py --query "What are the latest FDA regulations on heavy metals in baby food?"
+```
+
+---
+
+## 🛠️ Technologies
+
+- **LLM**: [Google Gemini](https://ai.google.dev/) / [Groq](https://groq.com/)
+- **Vector DB**: [Pinecone](https://www.pinecone.io/)
+- **Embeddings**: `text-embedding-004` (Gemini)
+- **Reranker**: `cross-encoder/ms-marco-MiniLM-L-6-v2`
+- **Framework**: Python 3.9+
+
+---
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
