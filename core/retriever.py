@@ -10,13 +10,14 @@ class SemanticRetriever:
     def __init__(self, embedding_service: EmbeddingService):
         self.embedding = embedding_service
 
-    def retrieve(self, query_vector, categories: list = None, top_k: int = 5, cluster: str = None):
-        logger.info(f"Retrieving semantic context for vector, categories={categories}, cluster={cluster}")
+    def retrieve(self, query_vector, categories: list = None, top_k: int = 5, cluster: str = None, country: str = None):
+        logger.info(f"Retrieving semantic context for vector, categories={categories}, cluster={cluster}, country={country}")
         results = query_pinecone(
             vector=query_vector,
             top_k=top_k,
             categories=categories,
             cluster=cluster,
+            country=country
         )
         processed = self._process_results(results)
         logger.info(f"Retrieved {len(processed)} semantic chunks")
@@ -47,9 +48,24 @@ class BM25Retriever:
         self._ids = []
         self._texts = []
         self._metadata = []
+        self._cache_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "bm25_index.pkl")
 
     def _build_index(self):
         from rank_bm25 import BM25Okapi
+        import pickle
+        import os
+        
+        if os.path.exists(self._cache_path):
+            logger.info("Loading BM25 index from disk cache...")
+            with open(self._cache_path, "rb") as f:
+                cache_data = pickle.load(f)
+                self._ids = cache_data["ids"]
+                self._texts = cache_data["texts"]
+                self._metadata = cache_data["metadata"]
+                self._bm25 = cache_data["bm25"]
+            logger.info(f"Loaded {len(self._texts)} documents from cache.")
+            return
+
         logger.info("Building BM25 index from Pinecone chunks (may take a moment)")
         chunks = get_all_chunks()
         if not chunks:
@@ -59,12 +75,22 @@ class BM25Retriever:
 
         self._ids = [c["id"] for c in chunks]
         self._texts = [c["text"] for c in chunks]
-        self._metadata = [{"cluster": c.get("cluster"), "source": c.get("source")} for c in chunks]
+        self._metadata = [{"cluster": c.get("cluster"), "source": c.get("source"), "country": c.get("country", "")} for c in chunks]
         tokenized_corpus = [doc.split() for doc in self._texts]
         self._bm25 = BM25Okapi(tokenized_corpus)
         logger.info(f"BM25 index built with {len(self._texts)} documents")
+        
+        os.makedirs(os.path.dirname(self._cache_path), exist_ok=True)
+        with open(self._cache_path, "wb") as f:
+            pickle.dump({
+                "ids": self._ids,
+                "texts": self._texts,
+                "metadata": self._metadata,
+                "bm25": self._bm25
+            }, f)
+        logger.info("BM25 index cached to disk.")
 
-    def search(self, query: str, top_k: int = 5, categories: list = None):
+    def search(self, query: str, top_k: int = 5, categories: list = None, country: str = None):
         if self._bm25 is None:
             self._build_index()
         
@@ -77,6 +103,9 @@ class BM25Retriever:
         scored_items = list(zip(self._ids, self._texts, scores, self._metadata))
         if categories:
             scored_items = [item for item in scored_items if item[3].get("cluster") in categories]
+        if country and country.lower() != "all":
+            scored_items = [item for item in scored_items if item[3].get("country") == country]
+            
         scored_items.sort(key=lambda x: x[2], reverse=True)
         top_items = scored_items[:top_k]
         results = []
@@ -119,12 +148,12 @@ class Retriever:
         self.semantic = SemanticRetriever(embedding_service)
         self.bm25 = BM25Retriever()
 
-    def retrieve(self, query: str, categories: list = None, top_k: int = 5, cluster: str = None):
+    def retrieve(self, query: str, categories: list = None, top_k: int = 5, cluster: str = None, country: str = None):
         # Embed query for semantic search
         query_vector = self.semantic.embedding.embed(query)
         # Retrieve from both sources
-        semantic_results = self.semantic.retrieve(query_vector, categories=categories, top_k=top_k, cluster=cluster)
-        bm25_results = self.bm25.search(query, top_k=top_k, categories=categories)
+        semantic_results = self.semantic.retrieve(query_vector, categories=categories, top_k=top_k, cluster=cluster, country=country)
+        bm25_results = self.bm25.search(query, top_k=top_k, categories=categories, country=country)
         # Merge & deduplicate
         merged = merge_and_deduplicate(semantic_results, bm25_results)
         return merged[:top_k]

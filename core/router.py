@@ -17,7 +17,14 @@ class Router:
         """
         # Build a mapping of normalized names to actual names for better matching
         # (Handles common Arabic spelling variations internally if needed)
-        
+        # Fast Path: Check if query has high overlap with any category directly
+        query_words = set(query.lower().split())
+        for official in self.ALL_CATEGORIES:
+            official_words = set(official.lower().split())
+            if len(query_words.intersection(official_words)) >= max(1, len(official_words) * 0.7):
+                logger.info(f"Fast Router Match: {official}")
+                return [official]
+
         prompt = (
             "You are an expert classifier for food‑safety regulatory documents.\n"
             f"User Query: \"{query}\"\n\n"

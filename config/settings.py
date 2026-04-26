@@ -3,7 +3,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Load env variables
-load_dotenv('config/.env')
+dotenv_path = Path(__file__).resolve().parent.parent / '.env'
+load_dotenv(dotenv_path)
 
 
 class BaseConfig:

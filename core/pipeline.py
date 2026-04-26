@@ -17,8 +17,8 @@ class Pipeline:
         self.reranker = reranker or Reranker()
         self.generator = generator or Generator(self.llm_service)
 
-    def run(self, query: str):
-        logger.info(f"Pipeline started for query: {query}")
+    def run(self, query: str, country: str = "All"):
+        logger.info(f"Pipeline started for query: {query} | Country: {country}")
 
         # 1. Route to categories
         categories = self.router.route(query)
@@ -27,7 +27,7 @@ class Pipeline:
         # 2. Retrieve (Semantic + BM25 merged)
         # Note: We use categories as a filter. If multiple categories are selected, 
         # the current retriever queries all of them.
-        retrieved_chunks = self.retriever.retrieve(query, categories=categories, top_k=20)
+        retrieved_chunks = self.retriever.retrieve(query, categories=categories, top_k=20, country=country)
         
         # 3. Rerank
         logger.info(f"Reranking {len(retrieved_chunks)} chunks...")

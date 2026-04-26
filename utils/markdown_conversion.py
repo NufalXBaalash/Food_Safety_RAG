@@ -76,6 +76,18 @@ def _convert_with_timeout(input_file_path: Path, do_ocr: bool, timeout_sec: int)
         raise RuntimeError(f"Worker Error: {res['message']}")
 
 
+import re
+
+def clean_markdown_text(text: str) -> str:
+    # Remove common repetitive footers and headers (Arabic variants)
+    # E.g., "الهيئة العامة للغذاء والدواء ص x"
+    text = re.sub(r'الهيئة العامة للغذاء والدواء.*?\d+', '', text)
+    # Remove standalone page numbers
+    text = re.sub(r'^\s*\d+\s*$', '', text, flags=re.MULTILINE)
+    # Condense multiple newlines
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    return text.strip()
+
 def convert_to_markdown(input_file_path: Path, output_folder: Path) -> Path:
     """
     Converts a PDF, DOC, or DOCX file to Markdown using Docling.
@@ -96,6 +108,9 @@ def convert_to_markdown(input_file_path: Path, output_folder: Path) -> Path:
     if word_count < 100:
         log.warning(f"    ↳ Extracted only {word_count} words natively. File is likely an image scan. Retrying with Heavy OCR...")
         text_content = _convert_with_timeout(input_file_path, do_ocr=True, timeout_sec=300)
+
+    # Clean the extracted text before saving
+    text_content = clean_markdown_text(text_content)
 
     output_path.write_text(text_content, encoding="utf-8")
     return output_path

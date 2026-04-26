@@ -26,7 +26,7 @@ def get_pinecone_index():
     return _pinecone_index
 
 
-def query_pinecone(vector, top_k=5, categories=None, cluster=None):
+def query_pinecone(vector, top_k=5, categories=None, cluster=None, country=None):
     """Query Pinecone across namespaces (clusters).
     If ``cluster`` is provided, only that namespace is queried; otherwise all namespaces are queried in parallel.
     ``categories`` is used as a metadata filter on the ``category`` field.
@@ -34,9 +34,15 @@ def query_pinecone(vector, top_k=5, categories=None, cluster=None):
     index = get_pinecone_index()
     try:
         # Build metadata filter
-        filter_query = None
+        filter_query = {}
         if categories:
-            filter_query = {"cluster": {"$in": categories}}
+            filter_query["cluster"] = {"$in": categories}
+        if country and country.lower() != "all":
+            filter_query["country"] = country
+            
+        if not filter_query:
+            filter_query = None
+
         # Determine namespaces to query
         if cluster:
             namespaces = [cluster]
@@ -46,7 +52,7 @@ def query_pinecone(vector, top_k=5, categories=None, cluster=None):
         if not namespaces:
             logger.warning("No namespaces found in the Pinecone index.")
             return []
-        logger.info(f"Querying Pinecone across {len(namespaces)} namespaces | top_k={top_k} | filter={categories}")
+        logger.info(f"Querying Pinecone across {len(namespaces)} namespaces | top_k={top_k} | filter={filter_query}")
         all_results = []
         def _query_namespace(ns):
             try:
@@ -82,7 +88,8 @@ def format_results(response):
             "score": match["score"],
             "text": match["metadata"].get("text", ""),
             "cluster": match["metadata"].get("cluster", ""),
-            "source": match["metadata"].get("source", "")
+            "source": match["metadata"].get("source", ""),
+            "country": match["metadata"].get("country", "")
         })
     return results
 
@@ -114,7 +121,8 @@ def get_all_chunks():
                     "id": match["id"],
                     "text": match["metadata"].get("text", ""),
                     "cluster": match["metadata"].get("cluster", ""),
-                    "source": match["metadata"].get("source", "")
+                    "source": match["metadata"].get("source", ""),
+                    "country": match["metadata"].get("country", "")
                 })
         except Exception as e:
             logger.error(f"Failed to fetch chunks from namespace {ns}: {e}")
