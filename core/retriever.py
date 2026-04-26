@@ -31,7 +31,7 @@ class SemanticRetriever:
                 "id": r.get("id"),
                 "text": r["text"],
                 "score": r["score"],
-                "category": r.get("category", "unknown"),
+                "cluster": r.get("cluster", "unknown"),
                 "source": r.get("source", "")
             })
         cleaned.sort(key=lambda x: x["score"], reverse=True)
@@ -59,7 +59,7 @@ class BM25Retriever:
 
         self._ids = [c["id"] for c in chunks]
         self._texts = [c["text"] for c in chunks]
-        self._metadata = [{"category": c.get("category"), "source": c.get("source")} for c in chunks]
+        self._metadata = [{"cluster": c.get("cluster"), "source": c.get("source")} for c in chunks]
         tokenized_corpus = [doc.split() for doc in self._texts]
         self._bm25 = BM25Okapi(tokenized_corpus)
         logger.info(f"BM25 index built with {len(self._texts)} documents")
@@ -76,7 +76,7 @@ class BM25Retriever:
         # Pair scores with ids and metadata
         scored_items = list(zip(self._ids, self._texts, scores, self._metadata))
         if categories:
-            scored_items = [item for item in scored_items if item[3].get("category") in categories]
+            scored_items = [item for item in scored_items if item[3].get("cluster") in categories]
         scored_items.sort(key=lambda x: x[2], reverse=True)
         top_items = scored_items[:top_k]
         results = []
@@ -85,7 +85,7 @@ class BM25Retriever:
                 "id": idx,
                 "text": text,
                 "score": float(score),
-                "category": meta.get("category", "unknown"),
+                "cluster": meta.get("cluster", "unknown"),
                 "source": meta.get("source", "")
             })
         logger.info(f"BM25 retrieval got {len(results)} chunks for query '{query}'")

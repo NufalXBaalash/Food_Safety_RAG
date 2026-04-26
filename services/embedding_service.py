@@ -5,26 +5,37 @@ from utils.logger import logger
 
 class EmbeddingService:
     def __init__(self):
-        # We assume GEMINI_API_KEY is in settings.llm or os.environ
-        api_key = getattr(settings.llm, 'GEMINI_API_KEY', os.environ.get('GEMINI_API_KEY'))
-        if not api_key:
-            raise ValueError("GEMINI_API_KEY is missing")
-            
-        self.client = genai.Client(api_key=api_key)
-        self.model = "models/gemini-embedding-001"
-        logger.info(f"Initialized EmbeddingService with model {self.model}")
+        self.model_name = settings.embedding.MODEL_NAME
+        self.device = getattr(settings.pipeline, 'ACCELERATOR_DEVICE', 'cpu')
+        
+        if "gemini" in self.model_name.lower():
+            api_key = getattr(settings.llm, 'GEMINI_API_KEY', os.environ.get('GEMINI_API_KEY'))
+            if not api_key:
+                raise ValueError("GEMINI_API_KEY is missing for Gemini embedding")
+            self.client = genai.Client(api_key=api_key)
+            logger.info(f"Initialized EmbeddingService with Gemini model {self.model_name}")
+            self.is_local = False
+        else:
+            from sentence_transformers import SentenceTransformer
+            logger.info(f"Loading local embedding model: {self.model_name} on {self.device}")
+            self.model = SentenceTransformer(self.model_name, device=self.device)
+            self.is_local = True
 
     def embed(self, text: str) -> list:
         try:
-            res = self.client.models.embed_content(
-                model=self.model,
-                contents=[text]
-            )
-            if res.embeddings and len(res.embeddings) > 0:
-                return res.embeddings[0].values
+            if self.is_local:
+                embedding = self.model.encode(text)
+                return embedding.tolist()
             else:
-                logger.error("No embeddings returned from Gemini API.")
-                return []
+                res = self.client.models.embed_content(
+                    model=self.model_name,
+                    contents=[text]
+                )
+                if res.embeddings and len(res.embeddings) > 0:
+                    return res.embeddings[0].values
+                else:
+                    logger.error(f"No embeddings returned from Gemini API for {self.model_name}")
+                    return []
         except Exception as e:
             logger.error(f"Error during embedding generation: {e}")
             return []

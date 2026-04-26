@@ -5,7 +5,7 @@ from config.settings import settings
 from utils.logger import logger
 
 class LLMService:
-    def __init__(self, model_name="gemini-2.5-flash"):
+    def __init__(self, model_name="gemini-3-flash-preview"):
         api_key = getattr(settings.llm, 'GEMINI_API_KEY', os.environ.get('GEMINI_API_KEY'))
         if not api_key:
             raise ValueError("GEMINI_API_KEY is missing")

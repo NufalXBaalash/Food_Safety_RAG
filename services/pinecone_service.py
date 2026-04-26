@@ -36,7 +36,7 @@ def query_pinecone(vector, top_k=5, categories=None, cluster=None):
         # Build metadata filter
         filter_query = None
         if categories:
-            filter_query = {"category": {"$in": categories}}
+            filter_query = {"cluster": {"$in": categories}}
         # Determine namespaces to query
         if cluster:
             namespaces = [cluster]
@@ -81,7 +81,7 @@ def format_results(response):
             "id": match["id"],
             "score": match["score"],
             "text": match["metadata"].get("text", ""),
-            "category": match["metadata"].get("category", ""),
+            "cluster": match["metadata"].get("cluster", ""),
             "source": match["metadata"].get("source", "")
         })
     return results
@@ -113,7 +113,7 @@ def get_all_chunks():
                 all_chunks.append({
                     "id": match["id"],
                     "text": match["metadata"].get("text", ""),
-                    "category": match["metadata"].get("category", ""),
+                    "cluster": match["metadata"].get("cluster", ""),
                     "source": match["metadata"].get("source", "")
                 })
         except Exception as e:
