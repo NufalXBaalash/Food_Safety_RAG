@@ -8,3 +8,5 @@ PyMuPDF
 langchain-text-splitters
 sentence-transformers
 rank-bm25
+docling
+wordsegment

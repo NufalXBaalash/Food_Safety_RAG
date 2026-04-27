@@ -91,23 +91,15 @@ def clean_markdown_text(text: str) -> str:
 def convert_to_markdown(input_file_path: Path, output_folder: Path) -> Path:
     """
     Converts a PDF, DOC, or DOCX file to Markdown using Docling.
-    Features Smart OCR:
-      1. Tries to extract text natively (do_ocr=False) which finishes in seconds.
-      2. If extracted text is minuscule (< 100 words), assumes it's a scanned 
-         image and falls back to heavy OCR (do_ocr=True).
-      3. Enforces a strict 5 minute timeout on extraction.
+    OCR is permanently disabled — only native text extraction is used.
+    Enforces a strict 2 minute timeout on extraction.
     """
     output_folder.mkdir(parents=True, exist_ok=True)
     output_path = output_folder / f"{input_file_path.stem}.md"
 
-    # 1. Attempt Native PyMuPDF Text Reading (Blindingly Fast)
+    # 1. Attempt Native Text Reading (OCR disabled)
     log.info(f"    ↳ Attempting native reading (OCR disabled)...")
     text_content = _convert_with_timeout(input_file_path, do_ocr=False, timeout_sec=120)
-    
-    word_count = len(text_content.split())
-    if word_count < 100:
-        log.warning(f"    ↳ Extracted only {word_count} words natively. File is likely an image scan. Retrying with Heavy OCR...")
-        text_content = _convert_with_timeout(input_file_path, do_ocr=True, timeout_sec=300)
 
     # Clean the extracted text before saving
     text_content = clean_markdown_text(text_content)

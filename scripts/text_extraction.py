@@ -71,13 +71,14 @@ def _save_manifest(manifest: dict) -> None:
 # Core conversion logic
 # ─────────────────────────────────────────────────────────────────────────────
 
-def convert_cluster(cluster_name: str, manifest: dict | None = None) -> dict:
+def convert_cluster(cluster_name: str, manifest: dict | None = None, progress_callback=None) -> dict:
     """
     Converts all supported files in data/raw/{cluster_name}/ to Markdown.
 
     Args:
         cluster_name: Name of the category folder (e.g. "الشيكولاتة")
         manifest:     Existing manifest dict to update in-place (loaded fresh if None)
+        progress_callback: Optional callable for reporting progress per file
 
     Returns:
         Updated manifest dict
@@ -103,7 +104,7 @@ def convert_cluster(cluster_name: str, manifest: dict | None = None) -> dict:
         log.info(f"[EMPTY] No supported files in: {cluster_name}")
         return manifest
 
-    log.info(f"\n{'═'*60}")
+    log.info(f"\\n{'═'*60}")
     log.info(f"  Cluster: {cluster_name}  ({len(files)} files)")
     log.info(f"{'═'*60}")
 
@@ -120,6 +121,9 @@ def convert_cluster(cluster_name: str, manifest: dict | None = None) -> dict:
             continue
 
         log.info(f"  [CONVERT] {file_path.name}")
+        if progress_callback:
+            progress_callback({"stage": "Converting to Markdown", "file": file_path.name})
+            
         try:
             result = convert_to_markdown(file_path, cluster_md)
             manifest[key] = {

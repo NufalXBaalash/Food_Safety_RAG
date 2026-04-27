@@ -187,6 +187,7 @@
                                     <option value="saudi">Saudi Arabia</option>
                                     <option value="other">Other</option>
                                 </select>
+                                <input id="upload-country-custom" name="country_custom" type="text" placeholder="Enter country name..." class="hidden w-full bg-slate-800/80 border border-slate-700 rounded-xl py-3 px-4 focus:outline-none focus:border-indigo-500/50 shadow-inner text-sm text-white">
                             </div>
 
                             <div class="space-y-2">
@@ -266,26 +267,67 @@
             }
         });
 
+        // Country dropdown toggle — show/hide custom text field
+        document.getElementById('upload-country').addEventListener('change', function(e) {
+            const customInput = document.getElementById('upload-country-custom');
+            if (e.target.value === 'other') {
+                customInput.classList.remove('hidden');
+                customInput.required = true;
+            } else {
+                customInput.classList.add('hidden');
+                customInput.required = false;
+                customInput.value = '';
+            }
+        });
+
         // Form Submit Handler
         document.getElementById('upload-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             const btn = document.getElementById('upload-submit');
             const status = document.getElementById('upload-status');
             const files = document.getElementById('upload-files').files;
-            
+
             if (files.length === 0) return;
 
             btn.disabled = true;
-            btn.innerHTML = `<span class="animate-spin text-xl">⏳</span> Processing Ingestion...`;
-            status.classList.add('hidden');
+            btn.innerHTML = `<span class="animate-spin text-xl">⏳</span> Uploading Files...`;
+            status.classList.remove('hidden');
 
             const formData = new FormData();
-            formData.append('country', document.getElementById('upload-country').value);
-            formData.append('cluster', document.getElementById('upload-cluster').value);
+            let countryVal = document.getElementById('upload-country').value;
+            if (countryVal === 'other') {
+                countryVal = document.getElementById('upload-country-custom').value.trim().toLowerCase();
+                if (!countryVal) {
+                    btn.disabled = false;
+                    btn.innerHTML = `<span>Start Ingestion Pipeline</span>`;
+                    status.classList.remove('hidden', 'bg-green-500/10', 'border-green-500/20', 'text-green-400', 'bg-slate-800/80', 'border-slate-700', 'text-indigo-300');
+                    status.classList.add('bg-red-500/10', 'border-red-500/20', 'text-red-400');
+                    status.innerHTML = `⚠️ Please enter a country name.`;
+                    return;
+                }
+            }
+            const clusterVal = document.getElementById('upload-cluster').value;
+            formData.append('country', countryVal);
+            formData.append('cluster', clusterVal);
             for (let i = 0; i < files.length; i++) {
                 formData.append('files', files[i]);
             }
+            
+            // Start polling progress
+            const progressRef = setInterval(async () => {
+                try {
+                    const res = await fetch(`/api/ingest/progress?cluster=${encodeURIComponent(clusterVal)}`);
+                    const data = await res.json();
+                    if(data.stage !== 'idle' && data.stage !== 'Complete') {
+                        btn.innerHTML = `<span class="animate-spin text-xl">⏳</span> ${data.stage}...`;
+                        status.classList.remove('bg-red-500/10', 'border-red-500/20', 'text-red-400', 'bg-green-500/10', 'border-green-500/20', 'text-green-400');
+                        status.classList.add('bg-slate-800/80', 'border-slate-700', 'text-indigo-300');
+                        status.innerHTML = `<div class="text-sm font-bold uppercase tracking-widest">${data.stage}</div>
+                                            <div class="text-xs font-mono text-slate-400 truncate mt-1">${data.file}</div>`;
+                    }
+                } catch(e) {}
+            }, 3000);
 
             try {
                 const response = await fetch('/api/ingest', {
@@ -294,15 +336,17 @@
                 });
                 
                 const data = await response.json();
+                if (!response.ok) throw new Error(data.detail || 'Server error');
                 
-                status.classList.remove('hidden', 'bg-red-500/10', 'border-red-500/20', 'text-red-400');
+                status.classList.remove('hidden', 'bg-red-500/10', 'border-red-500/20', 'text-red-400', 'bg-slate-800/80', 'border-slate-700', 'text-indigo-300');
                 status.classList.add('bg-green-500/10', 'border-green-500/20', 'text-green-400');
                 status.innerHTML = `✅ ${data.message}`;
             } catch (error) {
-                status.classList.remove('hidden', 'bg-green-500/10', 'border-green-500/20', 'text-green-400');
+                status.classList.remove('hidden', 'bg-green-500/10', 'border-green-500/20', 'text-green-400', 'bg-slate-800/80', 'border-slate-700', 'text-indigo-300');
                 status.classList.add('bg-red-500/10', 'border-red-500/20', 'text-red-400');
                 status.innerHTML = `⚠️ Ingestion failed: ${error.message}`;
             } finally {
+                clearInterval(progressRef);
                 btn.disabled = false;
                 btn.innerHTML = `<span>Start Ingestion Pipeline</span>`;
             }

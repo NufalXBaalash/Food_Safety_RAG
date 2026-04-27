@@ -76,7 +76,7 @@ def _fmt_size(path: Path) -> str:
 # Core chunking logic
 # ─────────────────────────────────────────────────────────────────────────────
 
-def chunk_cluster(cluster_name: str, display_name: str | None = None) -> list[dict]:
+def chunk_cluster(cluster_name: str, display_name: str | None = None, progress_callback=None) -> list[dict]:
     """
     Chunk all Markdown files that belong to one cluster.
 
@@ -90,6 +90,7 @@ def chunk_cluster(cluster_name: str, display_name: str | None = None) -> list[di
         cluster_name: Name of the cluster folder on disk (e.g. "الشيكولاتة")
         display_name: English name used for metadata and chunk IDs
                       (defaults to cluster_name if not provided)
+        progress_callback: Optional callable for reporting progress per file
 
     Returns:
         Flat list of enriched chunk dicts — empty list if nothing to chunk.
@@ -110,7 +111,7 @@ def chunk_cluster(cluster_name: str, display_name: str | None = None) -> list[di
         log.info(f"[EMPTY] No .md files in: {cluster_name}")
         return []
 
-    log.info(f"\n{'═'*60}")
+    log.info(f"\\n{'═'*60}")
     log.info(f"  Chunking: {name}  ({len(md_files)} .md files)")
     log.info(f"{'═'*60}")
 
@@ -128,6 +129,9 @@ def chunk_cluster(cluster_name: str, display_name: str | None = None) -> list[di
         for md_path in bar:
             file_size = _fmt_size(md_path)
             bar.set_postfix_str(f"{md_path.name[:40]}  ({file_size})", refresh=True)
+            
+            if progress_callback:
+                progress_callback({"stage": "Chunking and enriching", "file": md_path.name})
 
             t0 = time.perf_counter()
 

@@ -1,3 +1,4 @@
+import os
 from services.embedding_service import EmbeddingService
 from services.pinecone_service import query_pinecone, get_all_chunks
 from utils.logger import logger
@@ -33,7 +34,8 @@ class SemanticRetriever:
                 "text": r["text"],
                 "score": r["score"],
                 "cluster": r.get("cluster", "unknown"),
-                "source": r.get("source", "")
+                "source": r.get("source", ""),
+                "country": r.get("country", ""),
             })
         cleaned.sort(key=lambda x: x["score"], reverse=True)
         return cleaned
@@ -115,7 +117,8 @@ class BM25Retriever:
                 "text": text,
                 "score": float(score),
                 "cluster": meta.get("cluster", "unknown"),
-                "source": meta.get("source", "")
+                "source": meta.get("source", ""),
+                "country": meta.get("country", ""),
             })
         logger.info(f"BM25 retrieval got {len(results)} chunks for query '{query}'")
         return results

@@ -6,7 +6,7 @@ from utils.logger import logger
 class EmbeddingService:
     def __init__(self):
         self.model_name = settings.embedding.MODEL_NAME
-        self.device = getattr(settings.pipeline, 'ACCELERATOR_DEVICE', 'cpu')
+        self.device = settings.ACCELERATOR_DEVICE
         
         if "gemini" in self.model_name.lower():
             api_key = getattr(settings.llm, 'GEMINI_API_KEY', os.environ.get('GEMINI_API_KEY'))

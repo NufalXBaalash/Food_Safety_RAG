@@ -144,9 +144,17 @@ class Settings:
     @property
     def EMBEDDING_DIMENSION(self): return self.pinecone.DIMENSION
     @property
-    def ACCELERATOR_DEVICE(self): return "cpu" # Default
+    def ACCELERATOR_DEVICE(self): 
+        import torch
+        return "cuda" if torch.cuda.is_available() else "cpu"
     @property
     def EMBEDDING_MODEL(self): return self.embedding.MODEL_NAME
+    @property
+    def CHUNK_MIN_SIZE(self): return self.pipeline.CHUNK_MIN_SIZE
+    @property
+    def CHUNK_MAX_SIZE(self): return self.pipeline.CHUNK_MAX_SIZE
+    @property
+    def CHUNK_OVERLAP(self): return self.pipeline.CHUNK_OVERLAP
 
     @property
     def active_cluster_map(self):

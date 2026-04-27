@@ -153,42 +153,80 @@ def setup_colab():
     os.chdir("/content/Food_Safety_RAG")
 
     # ── [2/3] Install deps ────────────────────────────────────────────────────
-    print("⚙️  [2/3] Installing dependencies (docling, bge-m3, torch) — ~1 min...")
-    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", "requirements.txt"])
+    print("⚙️  [2/3] Installing dependencies (docling, bge-m3, torch, uvicorn, pyngrok) — ~1 min...")
+    subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r", "requirements.txt", "uvicorn", "fastapi", "pyngrok"])
 
     # ── [3/3] Configure run ───────────────────────────────────────────────────
     print("\\n🚀 [3/3] Configuring Pipeline Run\\n")
 
-    # Country selection
-    print("Select country dataset:")
-    print("  egypt  — Arabic clusters  (auto-downloaded from Google Drive)")
-    print("  saudi  — English clusters (requires zip upload or Drive URLs)")
-    while True:
-        country = input("Country [egypt/saudi] (default: egypt): ").strip().lower() or "egypt"
-        if country in COUNTRY_CLUSTERS:
-            break
-        print(f"  ⚠️  Unknown country '{{country}}'. Please type 'egypt' or 'saudi'.")
+    print("\\nWhat would you like to run?")
+    print("  1. Run Data Ingestion Pipeline")
+    print("  2. Start API / Web Server (UI & Chat)")
+    print("  3. Both (Ingest then Start Server)")
+    mode = input("Choice [1/2/3] (default: 2): ").strip() or "2"
 
-    # For Saudi: ensure raw data is present before the pipeline starts
-    _ensure_saudi_data(country)
+    if mode in ["1", "3"]:
+        # Country selection
+        print("\\n--- Pipeline Configuration ---")
+        print("Select country dataset:")
+        print("  egypt  — Arabic clusters  (auto-downloaded from Google Drive)")
+        print("  saudi  — English clusters (requires zip upload or Drive URLs)")
+        while True:
+            country = input("Country [egypt/saudi] (default: egypt): ").strip().lower() or "egypt"
+            if country in COUNTRY_CLUSTERS:
+                break
+            print(f"  ⚠️  Unknown country '{{country}}'. Please type 'egypt' or 'saudi'.")
 
-    # Cluster selection
-    clusters = COUNTRY_CLUSTERS[country]
-    print(f"\\nAvailable {{country.upper()}} clusters:")
-    for i, name in enumerate(clusters, 1):
-        print(f"  {{i:2d}}. {{name}}")
+        # For Saudi: ensure raw data is present before the pipeline starts
+        _ensure_saudi_data(country)
 
-    print("\\nType the exact cluster name to process ONE cluster,")
-    print("or press Enter to run ALL clusters for this country:")
-    cluster = input("Cluster Name: ").strip()
+        # Cluster selection
+        clusters = COUNTRY_CLUSTERS[country]
+        print(f"\\nAvailable {{country.upper()}} clusters:")
+        for i, name in enumerate(clusters, 1):
+            print(f"  {{i:2d}}. {{name}}")
 
-    # Build & run command
-    cmd = [sys.executable, "run_pipeline.py", "--country", country]
-    if cluster:
-        cmd += ["--cluster", cluster]
+        print("\\nType the exact cluster name to process ONE cluster,")
+        print("or press Enter to run ALL clusters for this country:")
+        cluster = input("Cluster Name: ").strip()
 
-    print(f"\\n▶  Running: {{' '.join(cmd)}}\\n")
-    subprocess.run(cmd)
+        # Build & run command
+        cmd = [sys.executable, "run_pipeline.py", "--country", country]
+        if cluster:
+            cmd += ["--cluster", cluster]
+
+        print(f"\\n▶  Running: {{' '.join(cmd)}}\\n")
+        subprocess.run(cmd)
+
+    if mode in ["2", "3"]:
+        print("\\n--- Starting API Server ---")
+        
+        # Ngrok setup
+        use_ngrok = input("Use Ngrok for public URL access? [y/N]: ").strip().lower() == 'y'
+        if use_ngrok:
+            print("\\n(Optional) Enter your Ngrok Authtoken if you have one, or press Enter to skip:")
+            ngrok_token = input("Authtoken: ").strip()
+            try:
+                from pyngrok import ngrok
+                if ngrok_token:
+                    ngrok.set_auth_token(ngrok_token)
+                public_url = ngrok.connect(8000).public_url
+                print(f"\\n✅ Ngrok Tunnel Established!")
+                print(f"🔗 Public URL: {{public_url}}\\n")
+            except Exception as e:
+                print(f"  ⚠️ Could not start Ngrok: {{e}}\\n")
+        else:
+            try:
+                from google.colab import output
+                print("\\n🌐 Exposing Port 8000 for Colab Access...")
+                output.serve_kernel_port_as_window(8000)
+                output.serve_kernel_port_as_iframe(8000, height=800)
+            except ImportError:
+                print("  ⚠️ Not running in Colab, unable to use colab proxy.\\n")
+            
+        print("🚀 Launching Uvicorn Server (Stop cell to exit)...\\n")
+        cmd = [sys.executable, "-m", "uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+        subprocess.run(cmd)
 
 
 if __name__ == "__main__":

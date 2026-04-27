@@ -1,11 +1,15 @@
 import os
 import sys
+import logging
 from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from backend.api.chat import router as chat_router
 from backend.api.ingest import router as ingest_router
+
+# Silence uvicorn access logs (the "INFO: GET /api/..." lines)
+logging.getLogger("uvicorn.access").setLevel(logging.WARNING)
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -30,4 +34,4 @@ app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="warning", access_log=False)

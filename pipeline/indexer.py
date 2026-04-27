@@ -72,7 +72,7 @@ def get_or_create_index():
 # Metadata preparation
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _build_pinecone_meta(chunk: dict) -> dict:
+def _build_pinecone_meta(chunk: dict, country: str = None) -> dict:
     """
     Extract the fields we want stored alongside each vector in Pinecone.
     Stored metadata enables filtered queries (e.g. "only HACCP documents").
@@ -91,7 +91,7 @@ def _build_pinecone_meta(chunk: dict) -> dict:
         "file_type":   meta.get("file_type", ""),
         "chunk_index": meta.get("chunk_index", 0),
         "size":        meta.get("size", 0),
-        "country":     settings.COUNTRY,
+        "country":     country or settings.COUNTRY,
     }
 
 
@@ -103,6 +103,7 @@ def upsert_to_pinecone(
     chunks: list[dict],
     namespace: str,
     index=None,
+    country: str = None,
 ) -> dict:
     """
     Upsert a list of embedded chunk dicts into the Pinecone index.
@@ -112,6 +113,7 @@ def upsert_to_pinecone(
         namespace: Pinecone namespace — use the cluster name for clean separation.
         index:     Optional pre-fetched Pinecone Index object.
                    Created automatically if not provided.
+        country:   Explicit country value to store in metadata (overrides settings.COUNTRY).
 
     Returns:
         Summary dict {"upserted": int, "skipped_no_vector": int}
@@ -137,7 +139,7 @@ def upsert_to_pinecone(
             {
                 "id":       chunk["metadata"]["chunk_id"],
                 "values":   chunk["vector"],
-                "metadata": _build_pinecone_meta(chunk),
+                "metadata": _build_pinecone_meta(chunk, country=country),
             }
             for chunk in batch
         ]
