@@ -9,7 +9,7 @@ pipeline = Pipeline()
 
 class ChatRequest(BaseModel):
     query: str
-    country: Optional[str] = "All" # Adding country field for filtering
+    country: Optional[str] = "global" # Adding country field for filtering
 
 class ChatResponse(BaseModel):
     answer: str
@@ -21,7 +21,13 @@ async def chat(request: ChatRequest):
     try:
         logger.info(f"Web Chat Request: {request.query} | Filter: {request.country}")
         result = pipeline.run(request.query, country=request.country)
-        
+        result1= pipeline.run(request.query, country="global")
+        if len(result["context"])==0:
+             return ChatResponse(
+            answer=result1["answer"],
+            categories=result1["categories"],
+            context=result1["context"]
+        )
         return ChatResponse(
             answer=result["answer"],
             categories=result["categories"],

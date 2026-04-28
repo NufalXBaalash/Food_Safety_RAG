@@ -25,13 +25,27 @@ SAUDI_CLUSTERS = [
     "hygiene-and-sanitation", "food-analysis", "nutrition",
     "oils-and-fats", "manufacturing", "food-spoilage", "general-food-safety",
 ]
-
+GLOBAL_CLUSETRS=[ "haccp", "iso", "sfda", "meat", "dairy", "fish",
+    "packaging-systems", "vegetables-and-fruits", "allergens",
+    "food-additives", "microbiology", "food-quality",
+    "hygiene-and-sanitation", "food-analysis", "nutrition",
+    "oils-and-fats", "manufacturing", "food-spoilage", "general-food-safety",  "جودة الغذاء", "التغذية", "الممارسات التصنيعية الجيدة", "المواد المضافة",
+    "النظافة والتطهير", "الهيئة القومية لسلامة الغذاء", "تلوث الغذاء",
+    "الكيمياء", "الشيكولاتة", "الميكروبيولوجي", "تحليل الأغذية",
+    "أساسيات حفظ وتداول الأغذية", "مهارات حل المشكلات", "مؤشرات الأداء",
+    "سحب العينات", "معامل التصنيع الغذائي", "الشروط الصحية لمصانع الأغذية",
+    "التتبع", "أنظمة التعبئة والتغليف", "الهاسب HACCP", "ISO الأيزو",
+    "حديث التخرج", "الزيوت والدهون", "Catering", "المكسرات",
+    "PRP البرامج الأولية", "الهيئة القومية لسلامة الغذاء (الجديدة)",
+    "الحبوب ومنتجاتها", "الكودكس", "فساد الغذاء",
+    "الألبان ومنتجاتها", "الخضروات والفواكه",]
 
 def _build_colab_template(zip_b64: str) -> str:
     """Return the FULL_PIPE_COLAB.py source as a string."""
 
     egypt_repr = repr(EGYPT_CLUSTERS)
     saudi_repr = repr(SAUDI_CLUSTERS)
+    global_repr=repr(GLOBAL_CLUSETRS)
 
     return f'''"""
 FULL_PIPE_COLAB.py
@@ -66,10 +80,12 @@ SAUDI_ZIP_FILE_ID = ""
 # ── Available clusters per country ────────────────────────────────────────────
 EGYPT_CLUSTERS  = {egypt_repr}
 SAUDI_CLUSTERS  = {saudi_repr}
+GLOBAL_CLUSTERS ={global_repr}
 
 COUNTRY_CLUSTERS = {{
     "egypt": EGYPT_CLUSTERS,
     "saudi": SAUDI_CLUSTERS,
+    "global":GLOBAL_CLUSTERS
 }}
 
 

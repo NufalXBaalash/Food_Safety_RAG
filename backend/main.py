@@ -5,8 +5,8 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from backend.api.chat import router as chat_router
-from backend.api.ingest import router as ingest_router
+from api.chat import router as chat_router
+from api.ingest import router as ingest_router
 
 # Silence uvicorn access logs (the "INFO: GET /api/..." lines)
 logging.getLogger("uvicorn.access").setLevel(logging.WARNING)

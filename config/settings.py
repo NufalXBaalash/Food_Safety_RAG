@@ -53,7 +53,7 @@ class PipelineConfig:
     CHUNK_MAX_SIZE = int(os.getenv("CHUNK_MAX_SIZE", "1500"))
     CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "150"))
     EMBED_BATCH_SIZE = int(os.getenv("EMBED_BATCH_SIZE", "50"))
-    COUNTRY = os.getenv("COUNTRY", "egypt")
+    COUNTRY = os.getenv("COUNTRY", "global")
 
 class ClusterConfig:
     EGYPT_MAP = {
@@ -111,6 +111,60 @@ class ClusterConfig:
         "manufacturing": "manufacturing",
         "food-spoilage": "food-spoilage",
         "general-food-safety": "general-food-safety",
+    }
+    Global_MAP={
+        "haccp": "haccp",
+        "iso": "iso",
+        "sfda": "sfda",
+        "meat": "meat",
+        "dairy": "dairy",
+        "fish": "fish",
+        "packaging-systems": "packaging-systems",
+        "vegetables-and-fruits": "vegetables-and-fruits",
+        "allergens": "allergens",
+        "food-additives": "food-additives",
+        "microbiology": "microbiology",
+        "food-quality": "food-quality",
+        "hygiene-and-sanitation": "hygiene-and-sanitation",
+        "food-analysis": "food-analysis",
+        "nutrition": "nutrition",
+        "oils-and-fats": "oils-and-fats",
+        "manufacturing": "manufacturing",
+        "food-spoilage": "food-spoilage",
+        "general-food-safety": "general-food-safety",
+                "جودة الغذاء": "food-quality",
+        "التغذية": "nutrition",
+        "الممارسات التصنيعية الجيدة": "good-manufacturing-practices",
+        "المواد المضافة": "food-additives",
+        "النظافة والتطهير": "hygiene-and-sanitation",
+        "الهيئة القومية لسلامة الغذاء": "national-food-safety-authority",
+        "تلوث الغذاء": "food-contamination",
+        "الكيمياء": "chemistry",
+        "الشيكولاتة": "chocolate",
+        "الشيكولاته": "chocolate", # Handling variant spelling on disk
+        "الميكروبيولوجي": "microbiology",
+        "تحليل الأغذية": "food-analysis",
+        "أساسيات حفظ وتداول الأغذية": "food-preservation-and-handling",
+        "مهارات حل المشكلات": "problem-solving-skills",
+        "مؤشرات الأداء": "key-performance-indicators",
+        "سحب العينات": "sampling",
+        "معامل التصنيع الغذائي": "food-manufacturing-labs",
+        "الشروط الصحية لمصانع الأغذية": "food-factory-hygiene",
+        "التتبع": "traceability",
+        "أنظمة التعبئة والتغليف": "packaging-systems",
+        "الهاسب HACCP": "haccp",
+        "ISO الأيزو": "iso",
+        "حديث التخرج": "fresh-graduate",
+        "الزيوت والدهون": "oils-and-fats",
+        "Catering": "catering",
+        "المكسرات": "nuts",
+        "PRP البرامج الأولية": "prerequisite-programs",
+        "الهيئة القومية لسلامة الغذاء (الجديدة)": "national-food-safety-authority-new",
+        "الحبوب ومنتجاتها": "cereals-and-products",
+        "الكودكس": "codex",
+        "فساد الغذاء": "food-spoilage",
+        "الألبان ومنتجاتها": "dairy-and-products",
+        "الخضروات والفواكه": "vegetables-and-fruits",
     }
 
 
