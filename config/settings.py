@@ -25,15 +25,14 @@ class PineconeConfig:
 
 
 class LLMConfig:
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-
-    MODEL_NAME = os.getenv("MODEL_NAME", "qwen2.5")
+    MODEL_NAME = os.getenv("MODEL_NAME", "google/gemini-2.0-flash-001")
 
     @classmethod
     def validate(cls):
-        if not (cls.GROQ_API_KEY or cls.GEMINI_API_KEY):
-            print("⚠️ No external LLM API key found, assuming local Ollama")
+        if not cls.OPENROUTER_API_KEY:
+            print("⚠️ OPENROUTER_API_KEY is missing")
 
 
 

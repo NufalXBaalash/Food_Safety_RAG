@@ -1,15 +1,20 @@
 import os
-from google import genai
 from config.settings import settings
 from utils.logger import logger
+
 
 class EmbeddingService:
     def __init__(self):
         self.model_name = settings.embedding.MODEL_NAME
         self.device = settings.ACCELERATOR_DEVICE
-        
+
         if "gemini" in self.model_name.lower():
-            api_key = getattr(settings.llm, 'GEMINI_API_KEY', os.environ.get('GEMINI_API_KEY'))
+            try:
+                from google import genai
+            except ImportError:
+                raise ImportError("google-genai is required for Gemini embeddings. Install with: pip install google-genai")
+
+            api_key = os.environ.get("GEMINI_API_KEY")
             if not api_key:
                 raise ValueError("GEMINI_API_KEY is missing for Gemini embedding")
             self.client = genai.Client(api_key=api_key)
@@ -17,6 +22,7 @@ class EmbeddingService:
             self.is_local = False
         else:
             from sentence_transformers import SentenceTransformer
+
             logger.info(f"Loading local embedding model: {self.model_name} on {self.device}")
             self.model = SentenceTransformer(self.model_name, device=self.device)
             self.is_local = True
@@ -29,7 +35,7 @@ class EmbeddingService:
             else:
                 res = self.client.models.embed_content(
                     model=self.model_name,
-                    contents=[text]
+                    contents=[text],
                 )
                 if res.embeddings and len(res.embeddings) > 0:
                     return res.embeddings[0].values

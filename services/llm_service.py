@@ -1,66 +1,59 @@
 import os
-from google import genai
-from groq import Groq
+from openai import OpenAI
 from config.settings import settings
 from utils.logger import logger
 
+
 class LLMService:
-    def __init__(self, model_name="gemini-3-flash-preview"):
-        api_key = getattr(settings.llm, 'GEMINI_API_KEY', os.environ.get('GEMINI_API_KEY'))
+    def __init__(self):
+        api_key = os.environ.get("OPENROUTER_API_KEY")
+        model_name = os.environ.get("MODEL_NAME", "google/gemini-2.0-flash-001")
+
         if not api_key:
-            raise ValueError("GEMINI_API_KEY is missing")
-            
-        self.client = genai.Client(api_key=api_key)
-        self.groq_client = Groq(api_key=os.environ.get('GROQ_API_KEY'))
+            raise ValueError("OPENROUTER_API_KEY is missing")
+
+        self.client = OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=api_key,
+        )
         self.model_name = model_name
-        logger.info(f"Initialized LLMService with model {self.model_name}")
+        logger.info(f"Initialized LLMService with OpenRouter model {self.model_name}")
+
+    def safe_chat(self, messages: list, retries: int = 2) -> str:
+        """Chat completion with null-safety and retry logic for free models."""
+        for attempt in range(retries):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model_name,
+                    messages=messages,
+                )
+                content = response.choices[0].message.content
+                if content and content.strip():
+                    return content.strip()
+                logger.warning(f"LLM returned empty content (attempt {attempt + 1}/{retries})")
+            except Exception as e:
+                logger.error(f"LLM call failed (attempt {attempt + 1}/{retries}): {e}")
+        return ""
+
+    # -- Legacy methods kept for backward compatibility --
 
     def classify_categories(self, prompt: str, allowed_categories: list) -> str:
-        """Ask the LLM to classify the query into one of the allowed categories.
-        The LLM is given a short prompt (built by Router) and should return a comma‑separated
-        list of relevant categories. If the model fails, we fall back to Groq.
-        """
         try:
-            response = self.client.models.generate_content(
-                model=self.model_name,
-                contents=prompt
-            )
-            # Use getattr or check for existence of .text to avoid NoneType errors
-            text = getattr(response, 'text', '')
-            return text.strip() if text else ""
+            return self.safe_chat([{"role": "user", "content": prompt}])
         except Exception as e:
-            if "503" in str(e) or "429" in str(e):
-                logger.warning(f"Gemini error ({e}), falling back to Groq for classification")
-                try:
-                    chat_completion = self.groq_client.chat.completions.create(
-                        messages=[{"role": "user", "content": prompt}],
-                        model="llama-3.3-70b-versatile",
-                    )
-                    return chat_completion.choices[0].message.content.strip()
-                except Exception as groq_e:
-                    logger.error(f"Error classifying with Groq: {groq_e}")
             logger.error(f"Error classifying categories: {e}")
             return ""
 
     def generate(self, prompt: str) -> str:
-        """Generate a response using the primary LLM (Gemini) with a fallback to Groq."""
         try:
-            response = self.client.models.generate_content(
-                model=self.model_name,
-                contents=prompt
-            )
-            return response.text
+            return self.safe_chat([{"role": "user", "content": prompt}])
         except Exception as e:
-            if "503" in str(e) or "429" in str(e):
-                logger.warning(f"Gemini error ({e}), falling back to Groq for generation")
-                try:
-                    chat_completion = self.groq_client.chat.completions.create(
-                        messages=[{"role": "user", "content": prompt}],
-                        model="llama-3.3-70b-versatile",
-                    )
-                    return chat_completion.choices[0].message.content
-                except Exception as groq_e:
-                    logger.error(f"Error generating text from Groq: {groq_e}")
-            
             logger.error(f"Error generating text from LLM: {e}")
+            return "عذراً، حدث خطأ أثناء محاولة توليد الإجابة. الرجاء المحاولة مرة أخرى."
+
+    def generate_with_history(self, messages: list) -> str:
+        try:
+            return self.safe_chat(messages)
+        except Exception as e:
+            logger.error(f"Error generating text with history: {e}")
             return "عذراً، حدث خطأ أثناء محاولة توليد الإجابة. الرجاء المحاولة مرة أخرى."

@@ -2,18 +2,24 @@ import os
 import sys
 import logging
 from pathlib import Path
+
+# Ensure the backend directory is on sys.path so `api` package is importable
+BACKEND_DIR = Path(__file__).resolve().parent
+if str(BACKEND_DIR) not in sys.path:
+    sys.path.insert(0, str(BACKEND_DIR))
+
+# Also add project root for rag/ module access
+PROJECT_ROOT = BACKEND_DIR.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from api.chat import router as chat_router
 from api.ingest import router as ingest_router
 
-# Silence uvicorn access logs (the "INFO: GET /api/..." lines)
 logging.getLogger("uvicorn.access").setLevel(logging.WARNING)
-
-# Add project root to path
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(PROJECT_ROOT))
 
 app = FastAPI(title="Food Safety RAG API")
 

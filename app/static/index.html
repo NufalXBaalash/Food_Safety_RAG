@@ -233,6 +233,7 @@
         const sourcesList = document.getElementById('sources-list');
         const categoryTags = document.getElementById('category-tags');
         const countrySelect = document.getElementById('chat-country');
+        const chatHistory = []; // {role: "user"|"assistant", content: "..."}
 
         window.switchTab = function(tab) {
             const chatBtn = document.getElementById('tab-chat');
@@ -357,6 +358,7 @@
             if (!query) return;
 
             userInput.value = '';
+            chatHistory.push({ role: 'user', content: query });
             addMessage(query, 'user');
             const typingId = addTypingIndicator();
 
@@ -364,19 +366,22 @@
                 const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ 
+                    body: JSON.stringify({
                         query: query,
-                        country: countrySelect.value
+                        country: countrySelect.value,
+                        history: chatHistory
                     })
                 });
 
                 const data = await response.json();
                 removeTypingIndicator(typingId);
+                chatHistory.push({ role: 'assistant', content: data.answer });
                 addMessage(data.answer, 'ai');
                 updateContext(data);
 
             } catch (error) {
                 removeTypingIndicator(typingId);
+                chatHistory.pop(); // Remove the user message on failure
                 addMessage("Sorry, I encountered an error. Please try again later.", 'ai');
             }
         }
